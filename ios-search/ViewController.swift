@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  ios-search
-//
-//  Created by derek quinn on 11/22/20.
-//
 
 import UIKit
 
@@ -12,13 +6,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SwapiApiService.getResults(parameters: SwapiConstants.paramStarships, completion:{ response in
+        SwapiApiService.getStarshipResults(parameters: SwapiConstants.paramStarships, completion:{ response in
             
             let starshipResponse: StarshipsResponse = response
             
-            print("[SUCCESS] getStarshipResponse Reached ViewController, response =",starshipResponse.results?.debugDescription)
+            print("[SUCCESS] getStarshipResponse Reached ViewController, RESULTS =",starshipResponse.results?.count ?? 0)
             
-        })        
+        })
+        
+        SwapiApiService.getVehicleResults(parameters: SwapiConstants.paramVehicles, completion: { response in
+            
+            let vehicleResponse: VehiclesResponse = response
+            print("[SUCCESS] getVehicleResponse Reached ViewController, RESULTS =",vehicleResponse.results?.count ?? 0)
+        })
     }
 }
 

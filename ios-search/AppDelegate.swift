@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  ios-search
-//
-//  Created by derek quinn on 11/22/20.
-//
 
 import UIKit
 
