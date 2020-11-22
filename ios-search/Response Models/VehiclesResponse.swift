@@ -9,22 +9,11 @@ struct VehiclesResponse: Codable {
 }
 
 struct Result: Codable {
-    let name, model, manufacturer, costInCredits: String?
-    let length, maxAtmospheringSpeed, crew, passengers: String?
-    let cargoCapacity, consumables, vehicleClass: String?
+    let name, model, manufacturer, cost_in_credits: String?
+    let length, max_atmosphering_speed, crew, passengers: String?
+    let cargo_capacity, consumables, vehicle_class: String?
     let pilots, films: [String]?
     let created, edited: String?
     let url: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case name, model, manufacturer
-        case costInCredits
-        case length
-        case maxAtmospheringSpeed
-        case crew, passengers
-        case cargoCapacity
-        case consumables
-        case vehicleClass
-        case pilots, films, created, edited, url
-    }
+
 }
