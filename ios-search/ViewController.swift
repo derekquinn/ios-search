@@ -12,14 +12,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SwapiApiService.getStarshipResponse( completion:{ response in
+        SwapiApiService.getResults(parameters: SwapiConstants.paramStarships, completion:{ response in
             
             let starshipResponse: StarshipsResponse = response
             
-            print("[SUCCESS] getStarshipResponse Reached ViewController, response =",starshipResponse.results?.debugDescription!)
+            print("[SUCCESS] getStarshipResponse Reached ViewController, response =",starshipResponse.results?.debugDescription)
             
-        })
-        
-    }   
+        })        
+    }
 }
 

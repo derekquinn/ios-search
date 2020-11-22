@@ -18,6 +18,7 @@
 		C4AF5853256A447000C15BCA /* StarshipsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF5852256A447000C15BCA /* StarshipsResponse.swift */; };
 		C4AF585B256A471100C15BCA /* SwapiApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF585A256A471100C15BCA /* SwapiApiService.swift */; };
 		C4AF5866256A4F4100C15BCA /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = C4AF5865256A4F4100C15BCA /* readme.md */; };
+		C4AF586B256A557600C15BCA /* SwapiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF586A256A557600C15BCA /* SwapiConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		C4AF5852256A447000C15BCA /* StarshipsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsResponse.swift; sourceTree = "<group>"; };
 		C4AF585A256A471100C15BCA /* SwapiApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapiApiService.swift; sourceTree = "<group>"; };
 		C4AF5865256A4F4100C15BCA /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		C4AF586A256A557600C15BCA /* SwapiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapiConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				C4AF5826256A42E700C15BCA /* LaunchScreen.storyboard */,
 				C4AF5829256A42E700C15BCA /* Info.plist */,
 				C4AF585A256A471100C15BCA /* SwapiApiService.swift */,
+				C4AF586A256A557600C15BCA /* SwapiConstants.swift */,
 			);
 			path = "ios-search";
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AF586B256A557600C15BCA /* SwapiConstants.swift in Sources */,
 				C4AF5820256A42E600C15BCA /* ViewController.swift in Sources */,
 				C4AF581C256A42E600C15BCA /* AppDelegate.swift in Sources */,
 				C4AF5853256A447000C15BCA /* StarshipsResponse.swift in Sources */,

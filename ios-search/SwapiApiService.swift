@@ -8,13 +8,10 @@
 import Foundation
 
 class SwapiApiService {
-    
-    static let swapiBaseUrl: String = "https://swapi.dev/api/"
-    static let starship: String = "starships"
-    
-    static func getStarshipResponse(completion: @escaping (StarshipsResponse) -> Void) {
+ 
+    static func getResults(parameters: String, completion: @escaping (StarshipsResponse) -> Void) {
         
-        let url = swapiBaseUrl + starship
+        let url = SwapiConstants.apiBaseUrl + parameters
         
         URLSession.shared.dataTask(with: URL(string:url)!, completionHandler: {data, response, error in
             
@@ -23,13 +20,16 @@ class SwapiApiService {
             }
             
             do {
-                
-                let response: StarshipsResponse = try JSONDecoder().decode(StarshipsResponse.self, from: data)
-                completion(response)
-                
+                if (parameters.contains(SwapiConstants.paramStarships)){
+                    let response: StarshipsResponse = try JSONDecoder().decode(StarshipsResponse.self, from: data)
+                    completion(response)
+                    
+                    print("[SUCCESS] getStarshipRespons() RESULTS: ",response.results?.debugDescription, "URL: \(url)")
+                }
+      
             } catch {
                 
-                print("[ERROR] getStarshipResponse()")
+                print("[ERROR] getStarshipResponse() URL: \(url)")
                 
             }
         }).resume()
