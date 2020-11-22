@@ -15,5 +15,5 @@ struct Result: Codable {
     let pilots, films: [String]?
     let created, edited: String?
     let url: String?
-
+    
 }

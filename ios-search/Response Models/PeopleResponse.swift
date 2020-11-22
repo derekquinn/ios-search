@@ -2,12 +2,12 @@
 import Foundation
 
 struct PeopleResponse: Codable {
-
+    
     let count: Int
     let next: String?
     let previous: String?
     let results: [Result]?
-
+    
     struct Result: Codable {
         let name: String?
         let height: String?
@@ -25,6 +25,6 @@ struct PeopleResponse: Codable {
         let created: String?
         let edited: String?
         let url: String?
-
+        
     }
 }

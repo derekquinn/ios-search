@@ -45,7 +45,6 @@ class SwapiApiService {
         }).resume()
     }
     
-    
     static func getPeopleResults (paramaters: String, completion: @escaping (PeopleResponse) -> Void) {
         
         let url = SwapiConstants.apiBaseUrl + paramaters
