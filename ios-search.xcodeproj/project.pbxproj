@@ -13,7 +13,7 @@
 		C4AF5823256A42E600C15BCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4AF5821256A42E600C15BCA /* Main.storyboard */; };
 		C4AF5825256A42E700C15BCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4AF5824256A42E700C15BCA /* Assets.xcassets */; };
 		C4AF5828256A42E700C15BCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4AF5826256A42E700C15BCA /* LaunchScreen.storyboard */; };
-		C4AF5833256A42E700C15BCA /* ios_searchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF5832256A42E700C15BCA /* ios_searchTests.swift */; };
+		C4AF5833256A42E700C15BCA /* SwapiApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF5832256A42E700C15BCA /* SwapiApiServiceTest.swift */; };
 		C4AF583E256A42E700C15BCA /* ios_searchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF583D256A42E700C15BCA /* ios_searchUITests.swift */; };
 		C4AF5853256A447000C15BCA /* StarshipsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF5852256A447000C15BCA /* StarshipsResponse.swift */; };
 		C4AF585B256A471100C15BCA /* SwapiApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF585A256A471100C15BCA /* SwapiApiService.swift */; };
@@ -21,6 +21,9 @@
 		C4AF586B256A557600C15BCA /* SwapiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF586A256A557600C15BCA /* SwapiConstants.swift */; };
 		C4AF5870256A5C5A00C15BCA /* VehiclesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF586F256A5C5A00C15BCA /* VehiclesResponse.swift */; };
 		C4AF5875256AF83F00C15BCA /* PeopleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF5874256AF83F00C15BCA /* PeopleResponse.swift */; };
+		C4AF5889256B1D3900C15BCA /* SuccessfulPeopleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C4AF5888256B1D3900C15BCA /* SuccessfulPeopleResponse.json */; };
+		C4AF5899256B1F1800C15BCA /* SuccessfulStarshipResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C4AF5898256B1F1800C15BCA /* SuccessfulStarshipResponse.json */; };
+		C4AF589E256B1F7500C15BCA /* SuccessfulVehiclesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C4AF589D256B1F7500C15BCA /* SuccessfulVehiclesResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,7 @@
 		C4AF5827256A42E700C15BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4AF5829256A42E700C15BCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4AF582E256A42E700C15BCA /* ios-searchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-searchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4AF5832256A42E700C15BCA /* ios_searchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_searchTests.swift; sourceTree = "<group>"; };
+		C4AF5832256A42E700C15BCA /* SwapiApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapiApiServiceTest.swift; sourceTree = "<group>"; };
 		C4AF5834256A42E700C15BCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4AF5839256A42E700C15BCA /* ios-searchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-searchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AF583D256A42E700C15BCA /* ios_searchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_searchUITests.swift; sourceTree = "<group>"; };
@@ -61,6 +64,9 @@
 		C4AF586A256A557600C15BCA /* SwapiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapiConstants.swift; sourceTree = "<group>"; };
 		C4AF586F256A5C5A00C15BCA /* VehiclesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesResponse.swift; sourceTree = "<group>"; };
 		C4AF5874256AF83F00C15BCA /* PeopleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResponse.swift; sourceTree = "<group>"; };
+		C4AF5888256B1D3900C15BCA /* SuccessfulPeopleResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SuccessfulPeopleResponse.json; sourceTree = "<group>"; };
+		C4AF5898256B1F1800C15BCA /* SuccessfulStarshipResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SuccessfulStarshipResponse.json; sourceTree = "<group>"; };
+		C4AF589D256B1F7500C15BCA /* SuccessfulVehiclesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SuccessfulVehiclesResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +135,10 @@
 		C4AF5831256A42E700C15BCA /* ios-searchTests */ = {
 			isa = PBXGroup;
 			children = (
-				C4AF5832256A42E700C15BCA /* ios_searchTests.swift */,
+				C4AF5888256B1D3900C15BCA /* SuccessfulPeopleResponse.json */,
+				C4AF5898256B1F1800C15BCA /* SuccessfulStarshipResponse.json */,
+				C4AF589D256B1F7500C15BCA /* SuccessfulVehiclesResponse.json */,
+				C4AF5832256A42E700C15BCA /* SwapiApiServiceTest.swift */,
 				C4AF5834256A42E700C15BCA /* Info.plist */,
 			);
 			path = "ios-searchTests";
@@ -268,6 +277,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AF589E256B1F7500C15BCA /* SuccessfulVehiclesResponse.json in Resources */,
+				C4AF5899256B1F1800C15BCA /* SuccessfulStarshipResponse.json in Resources */,
+				C4AF5889256B1D3900C15BCA /* SuccessfulPeopleResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4AF5833256A42E700C15BCA /* ios_searchTests.swift in Sources */,
+				C4AF5833256A42E700C15BCA /* SwapiApiServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
