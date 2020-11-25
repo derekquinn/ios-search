@@ -7,39 +7,52 @@ class ViewController: UIViewController {
     var peopleResponse: PeopleResponse?
     var vehiclesResponse: VehiclesResponse?
     
+    var starshipNames: [String] = []
+    var peopleNames: [String] = []
+    var vehicleNames: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadSwapiData()
+        
+    }
+    
+    @IBAction func logValues() {
+        
+        print("test starships---",self.starshipNames.debugDescription)
+        print("test vehicles----",self.vehicleNames.debugDescription)
+        print("test people -----", self.peopleNames.debugDescription)
+    }
+    
+    func loadSwapiData() {
         
         SwapiApiService.getStarshipResults(parameters: SwapiConstants.paramStarships, completion:{ response in
             
             self.starshipsResponse = response
             
-            print("[SUCCESS] getStarshipResponse Reached ViewController, RESULTS =",self.starshipsResponse!.results!.count )
-            
+            for i in 0...9 {
+                
+                self.starshipNames.append((self.starshipsResponse?.results?[i].name!)!)
+            }
         })
         
         SwapiApiService.getVehicleResults(parameters: SwapiConstants.paramVehicles, completion: { response in
             
             self.vehiclesResponse = response
-            
-            print("[SUCCESS] getVehicleResponse Reached ViewController, RESULTS =",self.vehiclesResponse!.results!.count)
+ 
+            for i in 0...9 {
+                
+                self.vehicleNames.append((self.vehiclesResponse?.results?[i].name!)!)
+            }
         })
         
         SwapiApiService.getPeopleResults(paramaters: SwapiConstants.paramPeople, completion:   { response in
             
             self.peopleResponse = response
             
-            print("[SUCCESS] getPeopleResponse Reached ViewController, RESULTS =",self.peopleResponse!.results!.count)
+            for i in 0...9 {
+                self.peopleNames.append((self.peopleResponse?.results![i].name!)!)
+            }
         })
-        
     }
-    
-    @IBAction func logValues() {
-        
-        print("test starships---",self.starshipsResponse?.results?.count ?? 0)
-        print("test vehicles----",self.vehiclesResponse?.results?.count ?? 0)
-        print("test people -----", self.peopleResponse?.results?.count ?? 0)
-    }
-    
 }

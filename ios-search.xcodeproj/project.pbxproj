@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C430C0D8256F1BC200391168 /* SwapiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430C0D7256F1BC200391168 /* SwapiHelper.swift */; };
 		C4AF581C256A42E600C15BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF581B256A42E600C15BCA /* AppDelegate.swift */; };
 		C4AF581E256A42E600C15BCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF581D256A42E600C15BCA /* SceneDelegate.swift */; };
 		C4AF5820256A42E600C15BCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF581F256A42E600C15BCA /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C430C0D7256F1BC200391168 /* SwapiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapiHelper.swift; sourceTree = "<group>"; };
 		C4AF5818256A42E600C15BCA /* ios-search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AF581B256A42E600C15BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4AF581D256A42E600C15BCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		C4AF581A256A42E600C15BCA /* ios-search */ = {
 			isa = PBXGroup;
 			children = (
+				C430C0D7256F1BC200391168 /* SwapiHelper.swift */,
 				C4AF5851256A435E00C15BCA /* Response Models */,
 				C4AF581B256A42E600C15BCA /* AppDelegate.swift */,
 				C4AF581D256A42E600C15BCA /* SceneDelegate.swift */,
@@ -301,6 +304,7 @@
 				C4AF5820256A42E600C15BCA /* ViewController.swift in Sources */,
 				C4AF581C256A42E600C15BCA /* AppDelegate.swift in Sources */,
 				C4AF5875256AF83F00C15BCA /* PeopleResponse.swift in Sources */,
+				C430C0D8256F1BC200391168 /* SwapiHelper.swift in Sources */,
 				C4AF5853256A447000C15BCA /* StarshipsResponse.swift in Sources */,
 				C4AF5870256A5C5A00C15BCA /* VehiclesResponse.swift in Sources */,
 				C4AF581E256A42E600C15BCA /* SceneDelegate.swift in Sources */,
