@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchContainerView.addSubview(searchController.searchBar)
         searchController.searchBar.delegate = self
+        searchController.searchBar.scopeButtonTitles = UIConstants.scopeButtonTitles
     }
     
     // Populate & Restore (reset) data in table

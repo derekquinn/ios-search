@@ -13,4 +13,5 @@ class UIConstants {
     static let selected: String = "Selected"
     static let selection: String = "Selection"
     static let ok: String = "Ok"
+    static let scopeButtonTitles: [String] = ["All", "People", "Starships", "Vehicles"]
 }
