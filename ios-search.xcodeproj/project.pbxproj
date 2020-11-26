@@ -124,16 +124,15 @@
 		C4AF581A256A42E600C15BCA /* ios-search */ = {
 			isa = PBXGroup;
 			children = (
+				C4AF58EA25705C8500C15BCA /* Storyboards */,
+				C4AF58E925705C7400C15BCA /* Controllers */,
 				C4AF58CF256F781B00C15BCA /* Services */,
 				C4AF58CE256F781200C15BCA /* Constants */,
 				C4AF58CD256F780600C15BCA /* Helpers */,
 				C4AF5851256A435E00C15BCA /* Models */,
 				C4AF581B256A42E600C15BCA /* AppDelegate.swift */,
 				C4AF581D256A42E600C15BCA /* SceneDelegate.swift */,
-				C4AF581F256A42E600C15BCA /* ViewController.swift */,
-				C4AF5821256A42E600C15BCA /* Main.storyboard */,
 				C4AF5824256A42E700C15BCA /* Assets.xcassets */,
-				C4AF5826256A42E700C15BCA /* LaunchScreen.storyboard */,
 				C4AF5829256A42E700C15BCA /* Info.plist */,
 			);
 			path = "ios-search";
@@ -194,6 +193,23 @@
 				C4AF585A256A471100C15BCA /* SwapiApiService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C4AF58E925705C7400C15BCA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF581F256A42E600C15BCA /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4AF58EA25705C8500C15BCA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF5821256A42E600C15BCA /* Main.storyboard */,
+				C4AF5826256A42E700C15BCA /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +539,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.derekquinn.ios-search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -542,6 +559,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.derekquinn.ios-search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

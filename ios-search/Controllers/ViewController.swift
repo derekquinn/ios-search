@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         
         tableViewData = currentSearchResults
         
+        definesPresentationContext = true
+        
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchContainerView.addSubview(searchController.searchBar)
@@ -37,16 +39,19 @@ class ViewController: UIViewController {
     }
     
     // Brains of the search operation
-    func filterCurrentSearchResults(searchTerm: String){
+    func filterSearchController(searchBar: UISearchBar){
         
-        if searchTerm.count > 0 {
-            currentSearchResults = tableViewData
-            
-            let filteredResults = currentSearchResults.filter {$0.name.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())}
-            
-            currentSearchResults  = filteredResults
-            tableView.reloadData()
+        guard let scopeString = searchBar.scopeButtonTitles?[searchBar.selectedScopeButtonIndex] else { return }
+        let selectedElement = TableView.Category(rawValue: scopeString) ?? .All
+        let searchText = searchBar.text ?? ""
+        
+        // filter tableViewData by category (scopeString) and search input (searchText)
+        currentSearchResults = tableViewData.filter { tableView in
+            let isElementMatching = (selectedElement == .All) || (tableView.category == selectedElement)
+            let isMatchingSearchText = tableView.name.lowercased().contains(searchText.lowercased()) || searchText.lowercased().isEmpty
+            return isElementMatching && isMatchingSearchText
         }
+        tableView.reloadData()
     }
     
     // Make API calls to populate table view
@@ -57,7 +62,7 @@ class ViewController: UIViewController {
             let starshipsResponse = response
             
             for i in 0...9 {
-                self.tableViewData.append(TableView(name: (starshipsResponse.results?[i].name)!, category: SwapiConstants.paramStarships))
+                self.tableViewData.append(TableView(name: (starshipsResponse.results?[i].name!)!, category: TableView.Category.Starships))
             }
         })
         
@@ -66,7 +71,7 @@ class ViewController: UIViewController {
             let vehiclesResponse = response
             
             for i in 0...9 {
-                self.tableViewData.append(TableView(name: (vehiclesResponse.results?[i].name)!, category: SwapiConstants.paramVehicles))
+                self.tableViewData.append(TableView(name: (vehiclesResponse.results?[i].name)!, category: TableView.Category.Vehicles))
             }
         })
         
@@ -75,7 +80,7 @@ class ViewController: UIViewController {
             let peopleResponse = response
             
             for i in 0...9 {
-                self.tableViewData.append(TableView(name: (peopleResponse.results?[i].name)!, category: SwapiConstants.paramPeople))
+                self.tableViewData.append(TableView(name: (peopleResponse.results?[i].name)!, category: TableView.Category.People))
             }
         })
     }
@@ -83,10 +88,9 @@ class ViewController: UIViewController {
 
 // Extensions to support search functionality
 extension ViewController: UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text {
-            filterCurrentSearchResults(searchTerm: searchText)
-        }
+        filterSearchController(searchBar: searchController.searchBar)
     }
 }
 
@@ -94,8 +98,8 @@ extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchController.isActive = false
-        if let searchText = searchBar.text {
-            filterCurrentSearchResults(searchTerm: searchText)
+        if searchBar.text != nil {
+            filterSearchController(searchBar: searchController.searchBar)
         }
     }
     
@@ -105,6 +109,10 @@ extension ViewController: UISearchBarDelegate {
         if let searchText = searchBar.text, !searchText.isEmpty {
             restoreDataSource()
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterSearchController(searchBar: searchBar)
     }
 }
 
