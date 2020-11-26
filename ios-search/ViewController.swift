@@ -125,11 +125,11 @@ extension ViewController: UISearchBarDelegate {
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alertController = UIAlertController(title: "Selection", message: "Selected \(currentSearchResults[indexPath.row])", preferredStyle: .alert)
+        let alertController = UIAlertController(title: UIConstants.selection, message: "\(UIConstants.selected)  \(currentSearchResults[indexPath.row])", preferredStyle: .alert)
         
         searchController.isActive = false
         
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: UIConstants.ok, style: .default, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
@@ -139,7 +139,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: UIConstants.cellIdentifier, for: indexPath)
         cell.textLabel?.text = currentSearchResults[indexPath.row]
         return cell
     }

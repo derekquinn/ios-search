@@ -10,7 +10,7 @@ import XCTest
 
 class SwapiApiServiceTest: XCTestCase {
     
-    override func setUp() {
+//    override func setUp() {
 
   
 //        do {
@@ -28,20 +28,20 @@ class SwapiApiServiceTest: XCTestCase {
 //        let expectedStarshipsResponse: StarshipsResponse
 //        let expectedPeopleResponse: PeopleResponse
         
-        
-        
-    }
-    
-    func testGetStarshipResults() {
-        
-        let path = Bundle.main.path(forResource: "WeatherResposneSuccess", ofType:"json")
-        
-        print("[HELPER] makeUrlWithFilePath() filepath:", filePath)
-
-        print("[HELPER] makeUrlWithFilePath() fileurl:", fileUrl)
-        XCTAssertTrue(true)
-        
-    }
+//        
+//        
+//    }
+//    
+//    func testGetStarshipResults() {
+//        
+//        let path = Bundle.main.path(forResource: "WeatherResposneSuccess", ofType:"json")
+//        
+//        print("[HELPER] makeUrlWithFilePath() filepath:", filePath)
+//
+//        print("[HELPER] makeUrlWithFilePath() fileurl:", fileUrl)
+//        XCTAssertTrue(true)
+//        
+//    }
 //    override func setUpWithError() throws {
 //        // Put setup code here. This method is called before the invocation of each test method in the class.
 //    }
@@ -73,4 +73,4 @@ class SwapiApiServiceTest: XCTestCase {
 //
 //    }
 
-}
+//}
