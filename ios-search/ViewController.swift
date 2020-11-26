@@ -2,20 +2,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    // UI Elements
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchContainerView: UIView!
     var searchController: UISearchController!
-    
-    var starshipsResponse: StarshipsResponse?
-    var peopleResponse: PeopleResponse?
-    var vehiclesResponse: VehiclesResponse?
-    
-    var starshipNames: [String] = []
-    var peopleNames: [String] = []
-    var vehicleNames: [String] = []
-    
-    var currentSearchResults: [String] = []
+    // Data coming in from API & handled by Search Logic
+    var currentSearchResults: [TableView] = []
+    var tableViewData: [TableView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,81 +17,76 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        starshipNames = currentSearchResults
+        tableViewData = currentSearchResults
         
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
-        // searchController.obscuresBackgroundDuringPresentation = false
         searchContainerView.addSubview(searchController.searchBar)
         searchController.searchBar.delegate = self
-        
-        
     }
     
-    func filterCurrentSearchResults(searchTerm: String){
-        
-        if searchTerm.count > 0 {
-            currentSearchResults = starshipNames
-            
-            let filteredResults = currentSearchResults.filter {$0.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())}
-            
-            currentSearchResults  = filteredResults
-            tableView.reloadData()
-        }
-        
-    }
-    
+    // Populate & Restore (reset) data in table
     func restoreDataSource() {
-        currentSearchResults = starshipNames
+        currentSearchResults = tableViewData
         tableView.reloadData()
     }
-    
-    
     
     @IBAction func refreshData(_ sender: Any) {
         restoreDataSource()
     }
+    
+    // Brains of the search operation
+    func filterCurrentSearchResults(searchTerm: String){
+        
+        if searchTerm.count > 0 {
+            currentSearchResults = tableViewData
+            
+            let filteredResults = currentSearchResults.filter {$0.name.replacingOccurrences(of: " ", with: "").lowercased().contains(searchTerm.replacingOccurrences(of: " ", with: "").lowercased())}
+            
+            currentSearchResults  = filteredResults
+            tableView.reloadData()
+        }
+    }
+    
+    // Make API calls to populate table view
     func loadSwapiData() {
         
         SwapiApiService.getStarshipResults(parameters: SwapiConstants.paramStarships, completion:{ response in
             
-            self.starshipsResponse = response
+            let starshipsResponse = response
             
             for i in 0...9 {
-                
-                self.starshipNames.append((self.starshipsResponse?.results?[i].name!)!)
+                self.tableViewData.append(TableView(name: (starshipsResponse.results?[i].name)!, category: SwapiConstants.paramStarships))
             }
         })
         
         SwapiApiService.getVehicleResults(parameters: SwapiConstants.paramVehicles, completion: { response in
             
-            self.vehiclesResponse = response
+            let vehiclesResponse = response
             
             for i in 0...9 {
-                
-                self.vehicleNames.append((self.vehiclesResponse?.results?[i].name!)!)
+                self.tableViewData.append(TableView(name: (vehiclesResponse.results?[i].name)!, category: SwapiConstants.paramVehicles))
             }
         })
         
         SwapiApiService.getPeopleResults(paramaters: SwapiConstants.paramPeople, completion:   { response in
             
-            self.peopleResponse = response
+            let peopleResponse = response
             
             for i in 0...9 {
-                self.peopleNames.append((self.peopleResponse?.results![i].name!)!)
+                self.tableViewData.append(TableView(name: (peopleResponse.results?[i].name)!, category: SwapiConstants.paramPeople))
             }
         })
     }
 }
 
+// Extensions to support search functionality
 extension ViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
             filterCurrentSearchResults(searchTerm: searchText)
         }
     }
-    
-    
 }
 
 extension ViewController: UISearchBarDelegate {
@@ -117,9 +105,6 @@ extension ViewController: UISearchBarDelegate {
             restoreDataSource()
         }
     }
-    
-    
-    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
@@ -140,8 +125,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UIConstants.cellIdentifier, for: indexPath)
-        cell.textLabel?.text = currentSearchResults[indexPath.row]
+        cell.textLabel?.text = currentSearchResults[indexPath.row].name
         return cell
     }
-    
 }
