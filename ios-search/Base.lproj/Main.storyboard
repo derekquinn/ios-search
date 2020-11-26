@@ -16,30 +16,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zc2-KY-Ec1">
-                                <rect key="frame" x="146" y="846" width="122" height="30"/>
-                                <state key="normal" title="Test Laser Beams"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ro-7v-0lR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DnJ-Pf-FsB"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xm-iH-zQs">
+                                <rect key="frame" x="180.5" y="828" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
                                 <connections>
-                                    <action selector="logValues" destination="BYZ-38-t0r" eventType="touchUpInside" id="mhg-dT-HWo"/>
+                                    <action selector="refreshData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TA1-mN-nXl"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gSq-Xl-9iv">
+                                <rect key="frame" x="0.0" y="112" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pEG-Ez-0Q4">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pEG-Ez-0Q4" id="A5d-pz-4Ab">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Zc2-KY-Ec1" secondAttribute="bottom" constant="20" id="F3W-31-0ir"/>
-                            <constraint firstItem="Zc2-KY-Ec1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iV5-Nz-d0O"/>
+                            <constraint firstItem="gSq-Xl-9iv" firstAttribute="top" secondItem="5ro-7v-0lR" secondAttribute="bottom" constant="18" id="3Nr-EW-lN6"/>
+                            <constraint firstItem="5ro-7v-0lR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FNc-xc-IIT"/>
+                            <constraint firstItem="5ro-7v-0lR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J2p-Xh-N0h"/>
+                            <constraint firstItem="gSq-Xl-9iv" firstAttribute="leading" secondItem="5ro-7v-0lR" secondAttribute="leading" id="WiB-fF-biJ"/>
+                            <constraint firstItem="5ro-7v-0lR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="b8a-8g-kv8"/>
+                            <constraint firstItem="7Xm-iH-zQs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ecL-ws-mC3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Xm-iH-zQs" secondAttribute="bottom" constant="4" id="j6w-TB-1AX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gSq-Xl-9iv" secondAttribute="bottom" constant="32" id="oXp-TS-M26"/>
+                            <constraint firstItem="7Xm-iH-zQs" firstAttribute="centerX" secondItem="gSq-Xl-9iv" secondAttribute="centerX" id="x2c-el-flE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchContainerView" destination="5ro-7v-0lR" id="QZ0-6v-YKY"/>
+                        <outlet property="tableView" destination="gSq-Xl-9iv" id="cMY-9Z-Qk4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="138"/>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
