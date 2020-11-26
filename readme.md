@@ -2,10 +2,7 @@
 #### This application exists to test the search functionalty provided by Swift.
 
 ### Data Source
-- Star Wars API (SWAPI) 
--- People
--- Starships
--- Vehicles 
+- Star Wars API (People, Vehicles & Starships endpoints)
 
 ### Features
 - Search names of People, Starships & Vehicles 
