@@ -100,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C430C0FD25708E9E00391168 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF581B256A42E600C15BCA /* AppDelegate.swift */,
+				C4AF581D256A42E600C15BCA /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		C4AF580F256A42E600C15BCA = {
 			isa = PBXGroup;
 			children = (
@@ -124,14 +133,13 @@
 		C4AF581A256A42E600C15BCA /* ios-search */ = {
 			isa = PBXGroup;
 			children = (
+				C430C0FD25708E9E00391168 /* Delegates */,
 				C4AF58EA25705C8500C15BCA /* Storyboards */,
 				C4AF58E925705C7400C15BCA /* Controllers */,
 				C4AF58CF256F781B00C15BCA /* Services */,
 				C4AF58CE256F781200C15BCA /* Constants */,
 				C4AF58CD256F780600C15BCA /* Helpers */,
 				C4AF5851256A435E00C15BCA /* Models */,
-				C4AF581B256A42E600C15BCA /* AppDelegate.swift */,
-				C4AF581D256A42E600C15BCA /* SceneDelegate.swift */,
 				C4AF5824256A42E700C15BCA /* Assets.xcassets */,
 				C4AF5829256A42E700C15BCA /* Info.plist */,
 			);
