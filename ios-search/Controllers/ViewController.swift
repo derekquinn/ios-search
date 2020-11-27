@@ -13,14 +13,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadSwapiData()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableViewData = currentSearchResults
+        self.setupSearchController()
+        self.setupTableViewDataAndDelegate()
         
         definesPresentationContext = true
-        
+    }
+    
+    // Setup searchController UI style and settings
+    private func setupSearchController() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchContainerView.addSubview(searchController.searchBar)
@@ -28,18 +28,20 @@ class ViewController: UIViewController {
         searchController.searchBar.scopeButtonTitles = UIConstants.scopeButtonTitles
     }
     
+    private func setupTableViewDataAndDelegate(){
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableViewData = currentSearchResults
+    }
+    
     // Populate & Restore (reset) data in table
-    func restoreDataSource() {
+    @IBAction func refreshData(_ sender: Any) {
         currentSearchResults = tableViewData
         tableView.reloadData()
     }
     
-    @IBAction func refreshData(_ sender: Any) {
-        restoreDataSource()
-    }
-    
     // Brains of the search operation
-    func filterSearchController(searchBar: UISearchBar){
+   private func filterSearchController(searchBar: UISearchBar){
         
         guard let scopeString = searchBar.scopeButtonTitles?[searchBar.selectedScopeButtonIndex] else { return }
         let selectedElement = TableView.Category(rawValue: scopeString) ?? .All
@@ -55,7 +57,7 @@ class ViewController: UIViewController {
     }
     
     // Make API calls to populate table view
-    func loadSwapiData() {
+    private func loadSwapiData() {
         
         SwapiApiService.getStarshipResults(parameters: SwapiConstants.paramStarships, completion:{ response in
             
@@ -107,7 +109,7 @@ extension ViewController: UISearchBarDelegate {
         searchController.isActive = false
         
         if let searchText = searchBar.text, !searchText.isEmpty {
-            restoreDataSource()
+            refreshData(self)
         }
     }
     
