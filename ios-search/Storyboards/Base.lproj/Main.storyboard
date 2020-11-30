@@ -18,7 +18,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ro-7v-0lR">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DnJ-Pf-FsB"/>
                                 </constraints>
@@ -57,6 +57,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Xm-iH-zQs" secondAttribute="bottom" constant="4" id="j6w-TB-1AX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gSq-Xl-9iv" secondAttribute="bottom" constant="32" id="oXp-TS-M26"/>
                             <constraint firstItem="7Xm-iH-zQs" firstAttribute="centerX" secondItem="gSq-Xl-9iv" secondAttribute="centerX" id="x2c-el-flE"/>
+                            <constraint firstItem="5ro-7v-0lR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ztp-Zu-YQ8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -72,9 +73,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
