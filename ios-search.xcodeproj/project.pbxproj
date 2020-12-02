@@ -25,6 +25,8 @@
 		C4AF5889256B1D3900C15BCA /* SuccessfulPeopleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C4AF5888256B1D3900C15BCA /* SuccessfulPeopleResponse.json */; };
 		C4AF5899256B1F1800C15BCA /* SuccessfulStarshipResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C4AF5898256B1F1800C15BCA /* SuccessfulStarshipResponse.json */; };
 		C4AF589E256B1F7500C15BCA /* SuccessfulVehiclesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C4AF589D256B1F7500C15BCA /* SuccessfulVehiclesResponse.json */; };
+		C4AF58D7256F787100C15BCA /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF58D6256F787100C15BCA /* UIConstants.swift */; };
+		C4AF58DF256F7A4100C15BCA /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF58DE256F7A4100C15BCA /* TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		C4AF5888256B1D3900C15BCA /* SuccessfulPeopleResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SuccessfulPeopleResponse.json; sourceTree = "<group>"; };
 		C4AF5898256B1F1800C15BCA /* SuccessfulStarshipResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SuccessfulStarshipResponse.json; sourceTree = "<group>"; };
 		C4AF589D256B1F7500C15BCA /* SuccessfulVehiclesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SuccessfulVehiclesResponse.json; sourceTree = "<group>"; };
+		C4AF58D6256F787100C15BCA /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		C4AF58DE256F7A4100C15BCA /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C430C0FD25708E9E00391168 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF581B256A42E600C15BCA /* AppDelegate.swift */,
+				C4AF581D256A42E600C15BCA /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		C4AF580F256A42E600C15BCA = {
 			isa = PBXGroup;
 			children = (
@@ -120,17 +133,15 @@
 		C4AF581A256A42E600C15BCA /* ios-search */ = {
 			isa = PBXGroup;
 			children = (
-				C430C0D7256F1BC200391168 /* SwapiHelper.swift */,
-				C4AF5851256A435E00C15BCA /* Response Models */,
-				C4AF581B256A42E600C15BCA /* AppDelegate.swift */,
-				C4AF581D256A42E600C15BCA /* SceneDelegate.swift */,
-				C4AF581F256A42E600C15BCA /* ViewController.swift */,
-				C4AF5821256A42E600C15BCA /* Main.storyboard */,
+				C430C0FD25708E9E00391168 /* Delegates */,
+				C4AF58EA25705C8500C15BCA /* Storyboards */,
+				C4AF58E925705C7400C15BCA /* Controllers */,
+				C4AF58CF256F781B00C15BCA /* Services */,
+				C4AF58CE256F781200C15BCA /* Constants */,
+				C4AF58CD256F780600C15BCA /* Helpers */,
+				C4AF5851256A435E00C15BCA /* Models */,
 				C4AF5824256A42E700C15BCA /* Assets.xcassets */,
-				C4AF5826256A42E700C15BCA /* LaunchScreen.storyboard */,
 				C4AF5829256A42E700C15BCA /* Info.plist */,
-				C4AF585A256A471100C15BCA /* SwapiApiService.swift */,
-				C4AF586A256A557600C15BCA /* SwapiConstants.swift */,
 			);
 			path = "ios-search";
 			sourceTree = "<group>";
@@ -156,14 +167,57 @@
 			path = "ios-searchUITests";
 			sourceTree = "<group>";
 		};
-		C4AF5851256A435E00C15BCA /* Response Models */ = {
+		C4AF5851256A435E00C15BCA /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				C4AF5852256A447000C15BCA /* StarshipsResponse.swift */,
 				C4AF586F256A5C5A00C15BCA /* VehiclesResponse.swift */,
 				C4AF5874256AF83F00C15BCA /* PeopleResponse.swift */,
+				C4AF58DE256F7A4100C15BCA /* TableView.swift */,
 			);
-			path = "Response Models";
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C4AF58CD256F780600C15BCA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C430C0D7256F1BC200391168 /* SwapiHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C4AF58CE256F781200C15BCA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF586A256A557600C15BCA /* SwapiConstants.swift */,
+				C4AF58D6256F787100C15BCA /* UIConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		C4AF58CF256F781B00C15BCA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF585A256A471100C15BCA /* SwapiApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C4AF58E925705C7400C15BCA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF581F256A42E600C15BCA /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4AF58EA25705C8500C15BCA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF5821256A42E600C15BCA /* Main.storyboard */,
+				C4AF5826256A42E700C15BCA /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,7 +361,9 @@
 				C430C0D8256F1BC200391168 /* SwapiHelper.swift in Sources */,
 				C4AF5853256A447000C15BCA /* StarshipsResponse.swift in Sources */,
 				C4AF5870256A5C5A00C15BCA /* VehiclesResponse.swift in Sources */,
+				C4AF58D7256F787100C15BCA /* UIConstants.swift in Sources */,
 				C4AF581E256A42E600C15BCA /* SceneDelegate.swift in Sources */,
+				C4AF58DF256F7A4100C15BCA /* TableView.swift in Sources */,
 				C4AF585B256A471100C15BCA /* SwapiApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +547,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.derekquinn.ios-search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -510,6 +567,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.derekquinn.ios-search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
